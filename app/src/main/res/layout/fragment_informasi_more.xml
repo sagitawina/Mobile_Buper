@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/gray"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Menu.ui.informasi.informasi">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TARIF DAN KETENTUAN PENGELOLAAN GEDUNG DAN BUMI PERKEMAHAN"
+            android:layout_gravity="center"
+            android:paddingBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/c_white"
+            android:textSize="10dp"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="30dp"
+            android:paddingLeft="30dp"
+            android:background="@color/black_overlay">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_forminf"
+                android:src="@drawable/ic_baseline_cancel_presentation_24" />
+
+            <TextView
+                android:id="@+id/Mekanisme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mekanisme Pemakaian"
+                android:paddingLeft="40dp"
+                android:textColor="@color/c_white"
+                android:textSize="15dp"/>
+
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="end"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:src="@drawable/ic_baseline_cancel_presentation_24" />-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="0dp"
+                android:paddingTop="35dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_forminf"
+                    android:src="@drawable/ic_baseline_payment_24" />
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginRight="10dp"-->
+<!--                    android:gravity="end"-->
+<!--                    android:src="@drawable/ic_arrow_forward_black_24dp" />-->
+
+                <TextView
+                    android:id="@+id/Harga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="Potongan Harga"
+                    android:textColor="@color/dot_dark_screen1"
+                    android:textSize="15dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="35dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_forminf"
+                        android:src="@drawable/ic_baseline_assignment_24" />
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="10dp"-->
+<!--                        android:gravity="end"-->
+<!--                        android:src="@drawable/ic_arrow_forward_black_24dp" />-->
+
+                    <TextView
+                        android:id="@+id/Batal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="40dp"
+                        android:text="Pembatalan dan Penundaan"
+                        android:textColor="@color/dot_dark_screen1"
+                        android:textSize="15dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingLeft="0dp"
+                        android:paddingTop="35dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_forminf"
+                            android:src="@drawable/ic_baseline_warning_24" />
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginRight="10dp"-->
+<!--                            android:gravity="end"-->
+<!--                            android:src="@drawable/ic_arrow_forward_black_24dp" />-->
+
+                        <TextView
+                            android:id="@+id/Larangan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="40dp"
+                            android:text="Larangan"
+                            android:textColor="@color/dot_dark_screen1"
+                            android:textSize="15dp" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="35dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bg_forminf"
+                                    android:src="@drawable/ic_baseline_dehaze_24" />
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginRight="10dp"-->
+<!--                                    android:gravity="end"-->
+<!--                                    android:src="@drawable/ic_arrow_forward_black_24dp" />-->
+
+                                <TextView
+                                    android:id="@+id/lainya"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="40dp"
+                                    android:text="Lain-Lain"
+                                    android:textColor="@color/dot_dark_screen1"
+                                    android:textSize="15dp" />
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

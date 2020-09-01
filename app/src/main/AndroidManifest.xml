@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.buper">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="Android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Menu.Upload_Mekanisme"></activity>
+        <activity android:name=".Menu.Upload_Bukti_Bayar" />
+        <activity android:name=".Menu.Menu_infomekanisme$Upload_Bukti_Bayar" />
+        <activity android:name=".Menu.Menu_edit_profile" />
+        <activity android:name=".Menu.ui.Menu_Detail.Menu_Detail_Gedung" />
+        <activity android:name=".Menu.ui.alat_outdoor.alat_outdoor" />
+        <activity android:name=".Menu.ui.tenda_buper.tenda_buper" />
+        <activity android:name=".Menu.ui.gedung_buper.buper_gedung" />
+        <activity android:name=".Menu.Menu_infobatal" />
+        <activity android:name=".Menu.Menu_infomekanisme" />
+        <activity android:name=".Menu.Menu_inforharga" />
+        <activity android:name=".Menu.Menu_infolarangan" />
+        <activity android:name=".Menu.Menu_InformasiLainnya" />
+        <activity android:name=".Menu.ui.transaksi.Transaksi" />
+        <activity android:name=".Menu.Menu_fasilitas_kwarda" />
+        <activity android:name=".Menu.ui.dashboard.dashboard" />
+        <activity
+            android:name=".Menu.Menu_Utama"
+            android:label="@string/title_activity_menu__utama"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Menu.Menu_DashBoard" />
+        <activity android:name=".Menu.Menu_Login" />
+        <activity android:name=".Menu.Menu_Register" />
+        <activity android:name=".Menu.Splash_Screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

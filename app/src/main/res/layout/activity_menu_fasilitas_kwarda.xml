@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu.Menu_fasilitas_kwarda">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/scout"/>
+
+        <EditText
+            android:id="@+id/gedung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Gedung"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/mess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Mess"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/tapakkemah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Tapak kemah"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/alatkemah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Alat Kemah"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/tenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Tenda"
+            android:textColor="@color/c_white"/>
+
+        <EditText
+            android:id="@+id/tongkat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            android:inputType="textPassword"
+            android:background="@drawable/bg_form"
+            android:hint="Tongkat" />
+<!--        <CheckBox-->
+<!--            android:id="@+id/RegisterShowPass"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Show Password"/>-->
+        <Button
+            android:id="@+id/pinjam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Pinjam"
+            android:background="@drawable/bg_button"/>
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textColor="@color/Biru"-->
+<!--            android:textStyle="normal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:layout_marginBottom="3dp"-->
+<!--            android:text="OR" />-->
+        <Button
+            android:id="@+id/hapus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Hapus"
+            android:background="@drawable/bg_button"/>
+    </LinearLayout>
+
+</ScrollView>

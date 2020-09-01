@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Menu.Menu_infobatal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Pembatalan dan Penundaan"
+            android:paddingBottom="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/c_black"
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
+            android:background="@color/darkblue">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="1.Calon Pengguna mengajukan permohonan kepada
+Manajer Pengelolan Gedung dan apabila Gedung dan atau Sarana lainnya pada tanggal dan hari pemesanan tidak sedang dalam
+digunakan untuk kepentingan internal Gerakan Pramuka,
+maka permohonan dapat disetujui."
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/c_white"
+                android:textSize="15dp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/darkblue"
+        android:layout_marginTop="210dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/lrg" />
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="210dp"-->
+<!--        android:layout_marginLeft="50dp"-->
+<!--        android:layout_marginRight="30dp"-->
+<!--        android:text="jika Waktu pembatalan	< 30 hari sebelum hari H maka Uang Booking-->
+<!--Tidak kembali dan Uang Muka akan Dikenakan 10 % dari Nilai Sewa"-->
+<!--        android:textColor="@color/c_white"-->
+<!--        android:textSize="15dp" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="330dp"
+        android:text="2. Penundaan hanya dapat diberikan bila dilakukan selambat-lambatnya 3
+(tiga) bulan sebelum acara"
+        android:textColor="@color/c_white"
+        android:textSize="15dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="380dp"
+        android:text="3. Penundaan yang dilakukan kurang dari 3 (tiga) bulan sebelum dari acara
+dianggap sebagai pembatalan"
+        android:textColor="@color/c_white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="480dp"
+        android:text="4. Perubahan tanggal penggunaan gedung diperbolehkan hanya 1 (satu) kali
+dalam waktu satu tahun dengan harga yang tidak mengikat, apabila setelah merubah tanggal kemudian
+dibatalkan kembali, maka uang muka gedung menjadi hangus"
+        android:textColor="@color/c_white"
+        android:textSize="15dp"/>
+
+</RelativeLayout>

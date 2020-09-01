@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    tools:context=".Menu.Menu_edit_profile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/scout"/>
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Email"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/Nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Nama"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/Telphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="No Telphone"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/Alamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="Alamat"
+            android:textColor="@color/c_white"/>
+        <EditText
+            android:id="@+id/Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="16dp"
+            android:inputType="text"
+            android:background="@drawable/bg_form"
+            android:hint="No KK/KTP/SIM"
+            android:textColor="@color/c_white"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="16dp"
+            android:inputType="textPassword"
+            android:background="@drawable/bg_form"
+            android:hint="Password" />
+        </com.google.android.material.textfield.TextInputLayout>
+<!--        <CheckBox-->
+<!--            android:id="@+id/RegisterShowPass"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Show Password"/>-->
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Save"
+            android:background="@drawable/bg_button"/>
+
+    </LinearLayout>
+</ScrollView>

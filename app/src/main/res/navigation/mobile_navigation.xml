@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+<!--    <fragment-->
+<!--        android:id="@+id/nav_dashboard"-->
+<!--        android:name="com.example.buper.Menu.ui.dashboard.dashboard"-->
+<!--        android:label="Dashboard"-->
+<!--        tools:layout="@layout/activity_dashboard" />-->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.buper.Menu.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.buper.Menu.ui.profile.profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+
+    <fragment
+        android:id="@+id/nav_buper"
+        android:name="com.example.buper.Menu.ui.data_buper.data_buper"
+        android:label="Data Bumi Perkemahan"
+        tools:layout="@layout/fragment_data_buper" />
+
+    <fragment
+        android:id="@+id/nav_notif"
+        android:name="com.example.buper.Menu.ui.notifikasi.notifikasi"
+        android:label="Notifikasi"
+        tools:layout="@layout/fragment_notifikasi" />
+    <fragment
+        android:id="@+id/nav_keranjang"
+        android:name="com.example.buper.Menu.ui.keranjang.keranjang"
+        android:label="Keranjang"
+        tools:layout="@layout/fragment_keranjang" />
+    <fragment
+        android:id="@+id/nav_pay"
+        android:name="com.example.buper.Menu.ui.transaksi.Transaksi"
+        android:label="Transaksi"
+        tools:layout="@layout/activity_transaksi" />
+    <fragment
+        android:id="@+id/nav_informasi"
+        android:name="com.example.buper.Menu.ui.informasi.informasi"
+        android:label="Informasi"
+        tools:layout="@layout/activity_menu_infomekanisme" />
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.buper.Menu.ui.gallery.GalleryFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/nav_log_out"
+        android:name="com.example.buper.Menu.ui.log_out.log_out"
+        android:label="Log Out"
+        tools:layout="@layout/fragment_log_out" />
+</navigation>
