@@ -29,6 +29,7 @@ public class Menu_Register extends AppCompatActivity {
     Button Login,Register;
     ProgressDialog loading;
     String  pesan_regsiter,nama;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +89,14 @@ public class Menu_Register extends AppCompatActivity {
             loading.dismiss();
             Toast.makeText(getApplicationContext(), "Username tidak boleh kosong", Toast.LENGTH_LONG).show();
         } else {
-            Register();
+            if (email.trim().matches(emailPattern)) {
+                Register();
+//                Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
+            } else {
+                loading.dismiss();
+                Toast.makeText(getApplicationContext(),"Alamat Email Tidak valid", Toast.LENGTH_SHORT).show();
+            }
+
         }
     }
 

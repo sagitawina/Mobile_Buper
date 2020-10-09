@@ -8,7 +8,8 @@ public class item_keranjang {
 
     @SerializedName("id")
     private String id;
-
+    @SerializedName("id_buper")
+    private String id_buper;
     @SerializedName("jenis")
     private String jenis;
 
@@ -158,6 +159,14 @@ public class item_keranjang {
         return gambar;
     }
 
+    public void setId_buper(String id_buper){
+
+        this.id_buper = id_buper;
+    }
+
+    public String getId_buper(){
+        return id_buper;
+    }
 
 
     @Override
@@ -166,6 +175,7 @@ public class item_keranjang {
                 "Menu_Item{" +
                         "id_peminjaman= '" +id_peminjaman+ '\'' +
                         "id= '" +id+ '\'' +
+                        "id_buper= '" +id_buper+ '\'' +
                         "jenis= '" +jenis+ '\'' +
                         " ,email= '" + email+ '\'' +
                         " ,nama_buper= '" + nama_buper+ '\'' +

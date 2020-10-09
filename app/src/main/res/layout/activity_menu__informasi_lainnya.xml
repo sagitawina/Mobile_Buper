@@ -1,138 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/c_white"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Menu.Menu_InformasiLainnya">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/layout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="10dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text="Lain-lain"
-            android:paddingBottom="10dp"
-            android:fontFamily="sans-serif-medium"
-            android:textColor="@color/c_black"
-            android:textSize="25dp"
-            android:textStyle="bold"/>
-
-        <RelativeLayout
+        android:padding="10dp"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp">
-
+            android:orientation="vertical">
             <LinearLayout
+                android:background="@color/darkblue"
+                android:layout_marginTop="25dp"
+                android:id="@+id/lineartampilkeranjang"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="70dp"
-                android:background="@color/darkblue">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="1. Penggunaan Catering dan Pelaminan/dekorasi dan atau sejenisnya
-    diluar rekanan yang telah Bekerjasama dengan Pihak Gedung,  dikenakan charger/biaya
-    masing-masing : "
-                    android:textColor="@color/c_white"
-                    android:textSize="15dp" />
-
+                android:orientation="vertical">
+               <TextView
+                   android:textSize="15dp"
+                   android:textColor="@color/c_white"
+                   android:text="gggg"
+                   android:id="@+id/Informasi"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"/>
             </LinearLayout>
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/darkblue"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/lrg" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="30dp"
-        android:text="Penyedia\Pengelola Catering sebesar maksimal Rp.3.000.000,-
-(tiga juta rupiah) setiap kegiatan, disesuaikan dengan kapasitas dan penilaian Manajer Gedung."
-        android:textColor="@color/c_white"
-        android:textSize="15dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/darkblue"
-        android:layout_marginTop="260dp"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/lrg" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="30dp"
-        android:text="Penyedia\Pengelola Pelaminan\dekorasi sebesar maksimal Rp.2.000.000,-
-(dua juta rupiah) setiap kegiatan, disesuaikan dengan kapasitas dan penilaian Manajer Gedung"
-        android:textColor="@color/c_white"
-        android:textSize="15dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="340dp"
-        android:text="2. Apabila pemakaian melebihi jadwal yang telah ditentukan,
-maka pengguna dikenakan biaya tambahan Rp.1.000.000,- (Satu juta rupiah) per Jam.
-(Deposit Rp.2.000.000,- (dua juta rupiah)) dibayar oleh pengguna bersamaan dengan pelunasan"
-        android:textColor="@color/c_white"
-        android:textSize="15dp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="450dp"
-        android:text="3. Untuk persiapan dekorasi dan catering diberikan waktu 4 (empat)
-jam sebelum acara dengan penerangan seperlunya dan untuk pembongkaran perlengkapan dekorasi dan
-catering diberikan waktu 1-2 jam setelah acara serta tanpa penitipan barang"
-        android:textColor="@color/c_white"
-        android:textSize="15dp" />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="560dp"
-        android:text="4. Pengguna dianggap sah sebagai pemesan setelah mengajukan
-Permohonaan Peminjaman/Penggunaan Gedung dan fasilitas lainnya dengan mengisi formulir Pemesanan
-Gedung  dan menyerahkan uang pendaftaran atau  Booking fee sebesar Rp.500.000,-
-(Lima ratus ribu rupiah) dan  foto copy KTP. (lampiran 1)"
-        android:textColor="@color/c_white"
-        android:textSize="15dp" />
-
-
-
-</RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

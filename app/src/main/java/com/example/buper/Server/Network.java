@@ -7,10 +7,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Network {
     public static final String  URL="http://192.168.43.236/";
-    public static final String BASE_URL = URL+"Api_Skripsi/";
+    public static final String BASE_URL =URL+"Api_Skripsi/";
     public static final String Url_gambar=URL+"kwartirlampung/public/img/upload/";
     private static Network mInstance;
     private Retrofit retrofit;
+//    private Initretrofit initretrofit;
     private Network(){
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

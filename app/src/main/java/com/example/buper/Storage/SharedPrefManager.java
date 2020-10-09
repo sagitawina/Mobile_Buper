@@ -12,6 +12,8 @@ public class SharedPrefManager {
     public static final String SP_USERNAME= "spusername";
     public static final String SP_PASSWORD= "sppassword";
     public static final String SP_ALAMAT = "spAlamat";
+    public static final String SP_IDBUPER = "idbuper";
+    public static final String SP_NAMABUPER = "namabuper";
     public static final String SP_SUDAH_LOGIN = "SudahLogin";
     SharedPreferences sp;
     SharedPreferences.Editor spEditor;
@@ -62,6 +64,12 @@ public class SharedPrefManager {
 
     public String getSPTelpon(){
         return sp.getString(SP_TELPON, "");
+    }
+    public String getSpIdbuper(){
+        return sp.getString(SP_IDBUPER, "");
+    }
+    public String getSpNamabuper(){
+        return sp.getString(SP_NAMABUPER, "");
     }
 
     public Boolean getSudahLogin(){

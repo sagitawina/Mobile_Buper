@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview1"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         android:background="@color/c_white"
         card_view:cardCornerRadius="5dp"
@@ -20,14 +20,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <CheckBox
-                android:id="@+id/pilihkeranjang"
-                android:layout_width="25dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="5dp"
-                android:contentDescription="Shop Icon"
-                android:scaleType="centerCrop"
-                tools:ignore="NotSibling" />
+<!--            <CheckBox-->
+<!--                android:id="@+id/pilihkeranjang"-->
+<!--                android:layout_width="25dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:contentDescription="Shop Icon"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                tools:ignore="NotSibling" />-->
 
             <TextView
                 android:id="@+id/nama_keranjang"
@@ -47,59 +47,58 @@
                 android:layout_below="@+id/nama_keranjang"
                 android:background="@color/colorPrimaryDark" />
 
-            <ImageView
-                android:id="@+id/CheckoutItemImg"
-                android:layout_width="100dp"
-                android:layout_height="90dp"
-                android:layout_below="@+id/line_below_cartShopName"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:contentDescription="Product Image"
-                android:scaleType="centerCrop"
-                card_view:srcCompat="@drawable/campsite" />
+<!--            <ImageView-->
+<!--                android:id="@+id/CheckoutItemImg"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="90dp"-->
+<!--                android:layout_below="@+id/line_below_cartShopName"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:contentDescription="Product Image"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                card_view:srcCompat="@drawable/campsite" />-->
 
-            <TextView
-                android:id="@+id/checkoutTxtTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/CheckoutItemImg"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_toEndOf="@+id/CheckoutItemImg"
-                android:layout_toRightOf="@+id/CheckoutItemImg"
-                android:lines="1"
-                android:maxLines="1"
-                android:text="Harga"
-                android:textColor="@color/c_white"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+<!--            <TextView-->
+<!--                android:id="@+id/checkoutTxtTitle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignTop="@+id/CheckoutItemImg"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_toEndOf="@+id/CheckoutItemImg"-->
+<!--                android:layout_toRightOf="@+id/CheckoutItemImg"-->
+<!--                android:lines="1"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="Harga"-->
+<!--                android:textColor="@color/c_white"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="italic" />-->
 
-            <TextView
-                android:id="@+id/harga_keranjang"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/checkoutTxtTitle"
-                android:layout_marginStart="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_toEndOf="@+id/CheckoutItemImg"
-                android:layout_toRightOf="@+id/CheckoutItemImg"
-                android:lines="1"
-                android:maxLines="1"
-                android:text="0"
-                android:textColor="@color/c_white"
-                android:textSize="18sp"
-                android:textStyle="italic" />
-            <TextView
-                android:layout_below="@+id/harga_keranjang"
-                android:layout_marginTop="50dp"
-                android:text="status"
-                android:layout_marginRight="60dp"
-                android:layout_marginLeft="20dp"
-                android:textSize="10dp"
-                android:textColor="@color/c_white"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/status"/>
+<!--            <TextView-->
+<!--                android:id="@+id/harga_keranjang"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/checkoutTxtTitle"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_toEndOf="@+id/CheckoutItemImg"-->
+<!--                android:layout_toRightOf="@+id/CheckoutItemImg"-->
+<!--                android:lines="1"-->
+<!--                android:maxLines="1"-->
+<!--                android:text="0"-->
+<!--                android:textColor="@color/c_white"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="italic" />-->
+<!--            <TextView-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:text="status"-->
+<!--                android:layout_marginRight="60dp"-->
+<!--                android:layout_marginLeft="20dp"-->
+<!--                android:textSize="10dp"-->
+<!--                android:textColor="@color/c_white"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:id="@+id/status"/>-->
             <ImageButton
                 android:id="@+id/delChkoutItemBut"
                 android:layout_width="37dp"
@@ -169,18 +168,29 @@
 <!--        android:text="Bayar Sekarang"-->
 <!--        android:textColor="#ffffff"-->
 <!--        android:textStyle="bold" />-->
-<!--    <Button-->
-<!--        android:layout_marginLeft="10dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:layout_marginRight="10dp"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_below="@+id/Bayar"-->
-<!--        android:id="@+id/Uploadmekanisme"-->
+    <Button
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/Bayar"
+        android:id="@+id/Detail_Keranjang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button"
+        android:gravity="center"
+        android:text="Detail Peminjaman"
+        android:textColor="@color/c_black"
+        android:textStyle="bold" />
+<!--    <view-->
+<!--        android:background="@color/mainColor"-->
 <!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/brown"-->
-<!--        android:gravity="center"-->
-<!--        android:text="Upload Surat Permohonan"-->
-<!--        android:textColor="#ffffff"-->
-<!--        android:textStyle="bold" />-->
+<!--        android:layout_height="10dp"/>-->
+    <LinearLayout
+        android:background="@color/mainColor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp">
+
+    </LinearLayout>
 </LinearLayout>

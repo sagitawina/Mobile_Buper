@@ -5,8 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,13 +18,9 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.buper.Item.item_gallery;
 import com.example.buper.Item.item_keranjang;
-import com.example.buper.Menu.Menu_Login;
-import com.example.buper.Menu.Menu_Register;
+import com.example.buper.Menu.Menu_Detail_Keranjang;
 import com.example.buper.Menu.Menu_Utama;
-import com.example.buper.Menu.Upload_Bukti_Bayar;
-import com.example.buper.Menu.Upload_Mekanisme;
 import com.example.buper.R;
 import com.example.buper.Server.Network;
 import com.squareup.picasso.Picasso;
@@ -35,7 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.ResponseBody;
@@ -60,19 +54,19 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
     @Override
     public void onBindViewHolder(final Adapter_keranjang.MyViewHolder holder, final int position) {
         // Set widget
-        holder.harga.setText(menu.get(position).getHarga());
+//        holder.harga.setText(menu.get(position).getHarga());
         holder.nama.setText(menu.get(position).getNama_buper());
 //        holder.harga.setText("Rp"+menu.get(position).getHarga());
-        final String urlGambar = Network.Url_gambar+menu.get(position).getGambar();
-        Log.v("url",urlGambar);
-        final String Status=menu.get(position).getStatus();
+//        final String urlGambar = Network.Url_gambar+menu.get(position).getGambar();
+//        Log.v("url",urlGambar);
+//        final String Status=menu.get(position).getStatus();
 //        if (Status.equals("entry")){
-//            holder.bayar.setVisibility(View.GONE);
-//            holder.Upload.setVisibility(View.VISIBLE);
+////            holder.bayar.setVisibility(View.GONE);
+////            holder.Upload.setVisibility(View.VISIBLE);
 //            holder.Status.setText("Silahkan Upload Mekanisme Peminjaman");
 //        }else if (Status.equals("verifikasi")){
-//            holder.bayar.setVisibility(View.VISIBLE);
-//            holder.Upload.setVisibility(View.GONE);
+////            holder.bayar.setVisibility(View.VISIBLE);
+////            holder.Upload.setVisibility(View.GONE);
 //            holder.Status.setText("Mekanisme Peminjaman Di Terima, Silahkan Bayar");
 //        }else{
 //            holder.bayar.setVisibility(View.GONE);
@@ -84,17 +78,26 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
 //            @Override
 //            public void onClick(View v) {
 ////                int Total=0;
-                if (holder.checkBox.isChecked()){
-                    String jumlahtotal=menu.get(position).getHarga();
-                    int Total=Integer.parseInt(jumlahtotal);
-                    Total++;
-                    Toast.makeText(context, ""+Total++, Toast.LENGTH_SHORT).show();
-//                    holder.total.setText(Total);
 
-                }
 //            }
 //        });
-        Picasso.with(context).load(urlGambar).into(holder.gambarbuper);
+//        holder.checkBox.isChecked();
+//        Picasso.with(context).load(urlGambar).into(holder.gambarbuper);
+        holder.detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent varIntent = new Intent(context, Menu_Detail_Keranjang.class);
+                varIntent.putExtra("ID", menu.get(position).getId_buper());
+                varIntent.putExtra("ID_KERANJANG", menu.get(position).getId());
+                varIntent.putExtra("NAMA", menu.get(position).getNama_buper());
+//                varIntent.putExtra("HARGA", menu.get(position).getHarga());
+//                varIntent.putExtra("DESKRIPSI", menu.get(position).getDeskripsi());
+//                varIntent.putExtra("GAMBAR_MENU", urlGambar);
+//                varIntent.putExtra("GAMBAR", menu.get(position).getFoto());
+                context.startActivity(varIntent);
+
+            }
+        });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,7 +159,7 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
 
     private void Delete(String idkeranjang) {
 //        Toast.makeText(context, ""+idkeranjang, Toast.LENGTH_SHORT).show();
-        retrofit2.Call<ResponseBody> call = Network.getInstance().getApi().delete_peminjaman(idkeranjang);
+        retrofit2.Call<ResponseBody> call = Network.getInstance().getApi().delete_sementara(idkeranjang);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -166,7 +169,7 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
                         if (jsonRESULTS.getString("success").equals("true")){
                             String pesan=jsonRESULTS.getString("message");
                             Log.d("response api", jsonRESULTS.toString());
-                            loading.dismiss();
+//                            loading.dismiss();
                             Toast.makeText(context, ""+pesan, Toast.LENGTH_SHORT).show();
 //                            Log.v("ini",pesan_regsiter);
 //                            RegisterBerhasil(pesan_regsiter);
@@ -174,11 +177,13 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
 //                            intent.putExtra("NIK",Username.getText().toString());
                             context.startActivity(intent);
 //                            context.finish();
+                            showdialogdata(pesan);
                         } else{
-                            loading.dismiss();
+//                            loading.dismiss();
                            String pesan=jsonRESULTS.getString("message");
                             Log.d("response api", jsonRESULTS.toString());
                             Toast.makeText(context, ""+pesan, Toast.LENGTH_SHORT).show();
+                            showdialogdata(pesan);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -200,6 +205,7 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
 
             }
         });
+
     }
 
 
@@ -215,18 +221,20 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
 //        Button bayar,Upload,hitung;
         CheckBox checkBox;
         ImageButton hapus;
+        Button detail;
         public MyViewHolder(View itemView) {
             super(itemView);
-            gambarbuper = (ImageView) itemView.findViewById(R.id.CheckoutItemImg);
-            harga = (TextView) itemView.findViewById(R.id.harga_keranjang);
+//            gambarbuper = (ImageView) itemView.findViewById(R.id.CheckoutItemImg);
+//            harga = (TextView) itemView.findViewById(R.id.harga_keranjang);
             nama = (TextView) itemView.findViewById(R.id.nama_keranjang);
             Status = (TextView) itemView.findViewById(R.id.status);
-            total = (TextView) itemView.findViewById(R.id.total_bayar);
+//            total = (TextView) itemView.findViewById(R.id.total_bayar);
 //            bayar = (Button) itemView.findViewById(R.id.Bayar);
 //            Upload=(Button)itemView.findViewById(R.id.Uploadmekanisme);
 //            hitung = (Button) itemView.findViewById(R.id.Hitung_total);
             checkBox = (CheckBox) itemView.findViewById(R.id.pilihkeranjang);
             hapus = (ImageButton) itemView.findViewById(R.id.delChkoutItemBut);
+            detail = (Button) itemView.findViewById(R.id.Detail_Keranjang);
 
         }
     }
@@ -239,6 +247,7 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
         builder.setPositiveButton("Tidak", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                loading.dismiss();
 //                Menu_Login.super.onBackPressed();
             }
         });
@@ -246,6 +255,31 @@ public class Adapter_keranjang extends RecyclerView.Adapter<Adapter_keranjang.My
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Delete(data);
+//                Toast.makeText(context,"Terima Kasih",Toast.LENGTH_LONG).show();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+    public void showdialogdata(final String data){
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Pesan");
+        builder.setMessage(data);
+        builder.setCancelable(true);
+        builder.setPositiveButton("Oke", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                loading.dismiss();
+                Intent intent=new Intent(context, Menu_Utama.class);
+//                            intent.putExtra("NIK",Username.getText().toString());
+                context.startActivity(intent);
+//                Menu_Login.super.onBackPressed();
+            }
+        });
+        builder.setNegativeButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+//                Delete(data);
 //                Toast.makeText(context,"Terima Kasih",Toast.LENGTH_LONG).show();
             }
         });

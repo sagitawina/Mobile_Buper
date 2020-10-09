@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_white"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="5dp"
+        android:background="@color/c_white"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="5dp"
+        card_view:contentPadding="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/nama_transaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/pilihkeranjang"
+                android:text="shop name here"
+                android:textSize="16sp"
+                tools:ignore="UnknownId" />
+
+            <View
+                android:id="@+id/line_below_cartShopName"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/nama_keranjang"
+                android:background="@color/colorPrimaryDark" />
+            <TextView
+                android:layout_marginTop="50dp"
+                android:text="status"
+                android:layout_marginRight="60dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="10dp"
+                android:textColor="@color/c_white"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/status_transaksi"/>
+            <TextView
+                android:layout_marginTop="100dp"
+                android:text="Rp.0"
+                android:layout_marginRight="60dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="10dp"
+                android:textColor="@color/c_white"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/total_transaksi"/>
+            <ImageButton
+                android:id="@+id/delete_transaki"
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/choco"
+                android:contentDescription="Delete Button"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bucket" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <Button
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/Bayar"
+        android:id="@+id/Upload_bukti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_button"
+        android:gravity="center"
+        android:text="Upload Bukti Pembayaran"
+        android:textColor="@color/c_black"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:background="@color/mainColor"
+        android:layout_width="match_parent"
+        android:layout_height="10dp">
+    </LinearLayout>
+</LinearLayout>

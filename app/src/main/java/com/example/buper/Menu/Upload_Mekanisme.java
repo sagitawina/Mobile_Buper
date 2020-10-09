@@ -2,6 +2,8 @@ package com.example.buper.Menu;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.app.Activity;
@@ -21,9 +23,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.buper.Menu.ui.Menu_Detail.Menu_Detail_Gedung;
+import com.example.buper.Menu.ui.keranjang.keranjang;
 import com.example.buper.R;
 import com.example.buper.Response.ApiConfig;
 import com.example.buper.Response.AppConfig;
+import com.example.buper.Server.Network;
+import com.example.buper.Storage.SharedPrefManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -175,11 +181,11 @@ public class Upload_Mekanisme extends AppCompatActivity {
                         if (jsonRESULTS.getString("success").equals("true")){
                             String pesan_login=jsonRESULTS.getString("message");
                             String NamaGambar=jsonRESULTS.getString("tmp_name");
-//                            RequestMenu(NamaGambar);
-                            progressDialog.dismiss();
-                            Intent intent=new Intent(Upload_Mekanisme.this,Menu_Utama.class);
-                            startActivity(intent);
-                            finish();
+                            Tambah_Transaski(NamaGambar);
+//                            progressDialog.dismiss();
+//                            Intent intent=new Intent(Upload_Mekanisme.this,Menu_Utama.class);
+//                            startActivity(intent);
+//                            finish();
 
 //                            Toast.makeText(Input_Datamenu.this, ""+pesan_login, Toast.LENGTH_SHORT).show();
 //                            progressDialog.dismiss();
@@ -225,7 +231,101 @@ public class Upload_Mekanisme extends AppCompatActivity {
         });
     }
 
+    private void Tambah_Transaski(String namaGambar) {
+        SharedPrefManager sharedPrefManager=new SharedPrefManager(Upload_Mekanisme.this);
+        String email=sharedPrefManager.getSPEmail();
+        String id= getIntent().getStringExtra("ID");
+        String tgl_pinjam= getIntent().getStringExtra("TGLPINJAM");
+        String tgl_kembali= getIntent().getStringExtra("TGLKEMBALI");
+        String total= getIntent().getStringExtra("HARGA");
+        String status="Menunggu Verifikasi";
+        String nama= getIntent().getStringExtra("NAMA");
+        Call<ResponseBody> call = Network.getInstance().getApi().addtransaksi(id,email,nama,status,total,tgl_pinjam,tgl_kembali,namaGambar);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        if (jsonRESULTS.getString("success").equals("true")) {
+                            String pesan = jsonRESULTS.getString("message");
+                            Log.d("response api", jsonRESULTS.toString());
+                            Log.v("ini", pesan);
+                            Delete();
+//                            progressDialog.dismiss();
+//                            Intent intent=new Intent(Upload_Mekanisme.this,Menu_Utama.class);
+//                            startActivity(intent);
+//                            finish();
+                        } else {
+                            String pesan = jsonRESULTS.getString("message");
+                            Log.v("ini", pesan);
+                            Toast.makeText(Upload_Mekanisme.this, "" + pesan, Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                try {
+                    Toast.makeText(Upload_Mekanisme.this, "Server Tidak Merespon" , Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+    }
+
     private void InputGagal() {
         Toast.makeText(this, "GAGAL", Toast.LENGTH_SHORT).show();
+    }
+    private void Delete() {
+        String id= getIntent().getStringExtra("ID_KERANJANG");
+        retrofit2.Call<ResponseBody> call = Network.getInstance().getApi().delete_sementara(id);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    try {
+                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        if (jsonRESULTS.getString("success").equals("true")){
+                            String pesan=jsonRESULTS.getString("message");
+                            Log.d("response api", jsonRESULTS.toString());
+//                            loading.dismiss();
+                            Toast.makeText(Upload_Mekanisme.this, "Berhasil Mengupload Mekanisme Peminjaman", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                            Intent intent=new Intent(Upload_Mekanisme.this,Menu_Utama.class);
+                            startActivity(intent);
+                            finish();
+                        } else{
+                            progressDialog.dismiss();
+                            String pesan=jsonRESULTS.getString("message");
+                            Log.d("response api", jsonRESULTS.toString());
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                try {
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
     }
 }

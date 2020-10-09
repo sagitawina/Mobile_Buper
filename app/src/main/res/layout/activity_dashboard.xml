@@ -10,6 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/c_black"
-        android:text="asep trinsa"
+        android:text="Wina Sagita"
         android:textSize="25dp"/>
 </LinearLayout>

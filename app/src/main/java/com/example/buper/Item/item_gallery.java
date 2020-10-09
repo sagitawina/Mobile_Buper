@@ -9,6 +9,9 @@ public class item_gallery {
     @SerializedName("deskripsi")
     private String deskrispi;
 
+    @SerializedName("tittle")
+    private String tittle;
+
     @SerializedName("foto")
     private String foto;
 
@@ -26,6 +29,15 @@ public class item_gallery {
     public void setDeskrispi(String deskrispi){
 
         this.deskrispi = deskrispi;
+    }
+
+    public String getTittle(){
+        return tittle;
+    }
+
+    public void setTittle(String tittle){
+
+        this.tittle = tittle;
     }
 
     public String getDeskrispi(){
@@ -49,6 +61,7 @@ public class item_gallery {
                         "id_galeri= '" + id_galeri+ '\'' +
                         " ,foto= '" + foto+ '\'' +
                         ",deskrispi= '" + deskrispi+ '\'' +
+                        ",tittle= '" + tittle+ '\'' +
                         "}";
     }
 }

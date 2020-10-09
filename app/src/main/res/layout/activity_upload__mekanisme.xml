@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:paddingTop="20dp"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="Masukkan Bukti Pembayaran"
+            android:text="Masukkan Bukti Mekanisme"
             android:textColor="@color/brown"
             android:textSize="25dp"
             android:textStyle="bold" />

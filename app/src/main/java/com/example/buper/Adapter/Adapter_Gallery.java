@@ -43,7 +43,7 @@ public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 @Override
 public void onBindViewHolder(MyViewHolder holder, final int position) {
         // Set widget
-        holder.keterangan.setText(menu.get(position).getDeskrispi());
+        holder.keterangan.setText(menu.get(position).getTittle());
 //        holder.harga.setText("Rp"+menu.get(position).getHarga());
         final String urlGambar = Network.Url_gambar+ menu.get(position).getFoto();
     Log.v("url",urlGambar);

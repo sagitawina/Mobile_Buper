@@ -26,6 +26,7 @@ import com.example.buper.Response.ApiConfig;
 import com.example.buper.Response.AppConfig;
 import com.example.buper.Server.Network;
 import com.example.buper.Storage.SharedPrefBuktiBayar;
+import com.example.buper.Storage.SharedPrefManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -179,10 +180,11 @@ public class Upload_Bukti_Bayar extends AppCompatActivity {
                             String pesan_login=jsonRESULTS.getString("message");
                             String NamaGambar=jsonRESULTS.getString("tmp_name");
 //                            RequestMenu(NamaGambar);
-                            progressDialog.dismiss();
-                            Intent intent=new Intent(Upload_Bukti_Bayar.this,Menu_Utama.class);
-                            startActivity(intent);
-                            finish();
+                            Tambah_Transaski(NamaGambar);
+//                            progressDialog.dismiss();
+//                            Intent intent=new Intent(Upload_Bukti_Bayar.this,Menu_Utama.class);
+//                            startActivity(intent);
+//                            finish();
 
 //                            Toast.makeText(Input_Datamenu.this, ""+pesan_login, Toast.LENGTH_SHORT).show();
 //                            progressDialog.dismiss();
@@ -230,5 +232,51 @@ public class Upload_Bukti_Bayar extends AppCompatActivity {
 
     private void InputGagal() {
         Toast.makeText(this, "GAGAL", Toast.LENGTH_SHORT).show();
+    }
+    private void Tambah_Transaski(String namaGambar) {
+        SharedPrefManager sharedPrefManager=new SharedPrefManager(Upload_Bukti_Bayar.this);
+        String email=sharedPrefManager.getSPEmail();
+        String id= getIntent().getStringExtra("ID");
+        Call<ResponseBody> call = Network.getInstance().getApi().Bayar(id,email,namaGambar);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    try {
+                        JSONObject jsonRESULTS = new JSONObject(response.body().string());
+                        if (jsonRESULTS.getString("success").equals("true")) {
+                            String pesan = jsonRESULTS.getString("message");
+                            Log.d("response api", jsonRESULTS.toString());
+                            Log.v("ini", pesan);
+                            Toast.makeText(Upload_Bukti_Bayar.this, "Berhasil Mengupload Bukti Bayar", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                            Intent intent=new Intent(Upload_Bukti_Bayar.this,Menu_Utama.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            String pesan = jsonRESULTS.getString("message");
+                            Log.v("ini", pesan);
+                            Toast.makeText(Upload_Bukti_Bayar.this, "" + pesan, Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+
+                }
+            }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                try {
+                    Toast.makeText(Upload_Bukti_Bayar.this, "Server Tidak Merespon" , Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
     }
 }

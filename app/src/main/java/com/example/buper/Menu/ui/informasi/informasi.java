@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,17 +20,17 @@ import com.example.buper.Menu.Menu_inforharga;
 import com.example.buper.R;
 
 public class informasi extends Fragment {
-    TextView Lainya,Larangan,Batal,Harga,Mekanisme;
+    ImageView Lainnya,Larangan,Batal,Harga,Mekanisme;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_informasi_more, container, false);
-        Lainya=(TextView)root.findViewById(R.id.lainya);
-        Larangan=(TextView)root.findViewById(R.id.Larangan);
-        Batal=(TextView)root.findViewById(R.id.Batal);
-        Harga =(TextView)root.findViewById(R.id.Harga);
-        Mekanisme=(TextView)root.findViewById(R.id.Mekanisme);
+        Lainnya=(ImageView) root.findViewById(R.id.lain_lain);
+        Larangan=(ImageView) root.findViewById(R.id.warning);
+        Batal=(ImageView) root.findViewById(R.id.cancel);
+        Harga =(ImageView) root.findViewById(R.id.harga);
+        Mekanisme=(ImageView) root.findViewById(R.id.mekanismeinfo);
 
-        Lainya.setOnClickListener(new View.OnClickListener() {
+        Lainnya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(), Menu_InformasiLainnya.class));
